@@ -1,0 +1,15 @@
+<h1>LIST OF TASK</h1>
+
+<div class="form-check">
+  <% @tasks.each do |tache| %>
+    <div>
+      <input class="form-check-input" type="checkbox" value="<%= tache.completed %>" id="flexCheckIndeterminate">
+      <label class="form-check-label" for="flexCheckIndeterminate">
+        <%= link_to tache.title, task_path(tache) %>
+      </label>
+     <%= link_to "🗑️", task_path(id: tache.id), data: { turbo_method: :delete, turbo_confirm: 'Are you sure brooo ?'} %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Add a new item", new_task_path %>

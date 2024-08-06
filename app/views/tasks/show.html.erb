@@ -1,0 +1,15 @@
+<h1><%= @tasks.title %></h1>
+
+<div class="container bg-light">
+  <%= @tasks.details %>
+</div>
+
+<div>
+    <input class="form-check-input" type="checkbox" value="<%= @tasks.completed%>" id="flexCheckIndeterminate">
+    <label class="form-check-label" for="flexCheckIndeterminate"> <%= @message %>
+    </label>
+</div>
+
+<%= link_to "back to list", tasks_path %>
+
+<%= link_to "Edit this task", edit_task_path %>
